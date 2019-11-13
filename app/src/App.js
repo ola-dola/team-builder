@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Form from './Components/Form';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           )
         })
       }
+      <Form teamMembers={teamMembers} addTeamMember={addTeamMember} />
     </div>
   );
 }

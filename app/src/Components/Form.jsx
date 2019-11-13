@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Form(props) {
+const initialForm = {
+  name: "",
+  email: "",
+  role: ""
+}
+
+function Form({teamMembers, addTeamMember}) {
+  const [formInput, setFormInput] = useState(initialForm);
+
+  const handleFormInput = event => {
+    setFormInput({
+      ...formInput,
+      [event.target.name]: event.target.value
+    })
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit} >
       <label htmlFor='name'>Name</label>
       <input
         type='text'
@@ -21,6 +36,8 @@ function Form(props) {
         name="role"
         onChange={handleFormInput}
       />
+      
+      <button type="submit">Submit</button>
     </form>
   )
 }
