@@ -3,13 +3,7 @@ import Form from './Components/Form';
 import './App.css';
 
 function App() {
-  const [teamMembers, addTeamMember] = useState([
-    {
-      name: "",
-      email: "",
-      role: ""
-    }
-  ]);
+  const [teamMembers, addTeamMember] = useState([]);
 
   return (
     <div className="App">
